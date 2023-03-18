@@ -8,3 +8,9 @@ class DFA:
     
     def __repr(self):
         return f"DFA({self.Q},\n\t{self.sigma},\n\t{self.delta},\n\t{self.q0},\n\t{self.F})"
+
+D0 = DFA({0, 1, 2}, {"a", "b"}, {
+    (0, "a"): 0, (0, "b"): 1,
+    (1, "a"): 2, (1, "b"): 1,
+    (2, "a"): 2, (2, "b"): 2,
+}, 0, {0, 1})
