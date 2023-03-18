@@ -23,4 +23,12 @@ D0 = DFA({0, 1, 2}, {"a", "b"}, {
     (2, "a"): 2, (2, "b"): 2,
 }, 0, {0, 1})
 
-print(D0.run("aba"))
+# this is a DFA that accepts all strings with even number of a's and even number of b's or odd number of a's and odd number of b's
+D1 = DFA({0, 1, 2, 3}, {"a", "b"}, {
+    (0, "a"): 2, (0, "b"): 1,
+    (1, "a"): 0, (1, "b"): 3,
+    (2, "a"): 0, (2, "b"): 3,
+    (3, "a"): 1, (3, "b"): 2,},
+    0, {0, 3})
+
+print(D1.run("abbbbaaa"))
